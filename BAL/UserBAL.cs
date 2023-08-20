@@ -15,16 +15,16 @@ namespace BAL
 			get { return _Empno; }
 			set { _Empno = value; }
 		}
-		private String _UserID;
+		private String _Username;
 
-		public String UserID
+		public String Username
 		{
-			get { return _UserID; }
-			set { _UserID = value; }
+			get { return _Username; }
+			set { _Username = value; }
 		}
 		private string _Password;
 
-		public string Pasword
+		public string Password
 		{
 			get { return _Password; }
 			set { _Password = value; }

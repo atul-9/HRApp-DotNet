@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BAL;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -32,14 +33,11 @@ namespace HRApp
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
+        private void button1_Click(object sender, EventArgs e) { 
             Console.WriteLine($"User: {txtUsername.Text} \n Password: {txtPassword.Text}");
             if (txtUsername.Text == "")
             {
                 label1.Visible = true;
-
-
             }
             if (txtPassword.Text == "")
             {
@@ -47,7 +45,35 @@ namespace HRApp
 
 
             }
+
+            UserHelper helper= new UserHelper();
+            bool status = helper.ValidateUser(txtUsername.Text, txtPassword.Text);
+            if (status)
+            {
+                MessageBox.Show("Login");
+            }
+            else
+            {
+                MessageBox.Show("Incorrect");
+            }
+
         }
+private void clearBtn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            this.Hide();
+            UserMgt form2 = new UserMgt();
+            form2.Show();
+
+            
+        }
+    
+           
+        
 
         private void label1_Click(object sender, EventArgs e)
         {
