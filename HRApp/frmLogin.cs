@@ -34,6 +34,7 @@ namespace HRApp
 
         private void button1_Click(object sender, EventArgs e)
         {
+            Console.WriteLine($"User: {txtUsername.Text} \n Password: {txtPassword.Text}");
             if (txtUsername.Text == "")
             {
                 label1.Visible = true;
